@@ -65,35 +65,35 @@ EDGES = {
 #     return rows
 
 
-def draw_connections(frame, keypoints, edges, confidence_threshold):
-    y, x, c = frame.shape
-    shaped = np.squeeze(np.multiply(keypoints, [y,x,1]))
+# def draw_connections(frame, keypoints, edges, confidence_threshold):
+#     y, x, c = frame.shape
+#     shaped = np.squeeze(np.multiply(keypoints, [y,x,1]))
     
-    for edge, color in edges.items():
-        p1, p2 = edge
-        y1, x1, c1 = shaped[p1]
-        y2, x2, c2 = shaped[p2]
+#     for edge, color in edges.items():
+#         p1, p2 = edge
+#         y1, x1, c1 = shaped[p1]
+#         y2, x2, c2 = shaped[p2]
         
-        if (c1 > confidence_threshold) & (c2 > confidence_threshold):      
-            cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0,0,255), 4)
+#         if (c1 > confidence_threshold) & (c2 > confidence_threshold):      
+#             cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0,0,255), 4)
 
 
-def draw_keypoints(frame, keypoints, confidence_threshold):
-    y, x, c = frame.shape
-    shaped = np.squeeze(np.multiply(keypoints, [y,x,1]))
+# def draw_keypoints(frame, keypoints, confidence_threshold):
+#     y, x, c = frame.shape
+#     shaped = np.squeeze(np.multiply(keypoints, [y,x,1]))
     
-    for kp in shaped:
-        ky, kx, kp_conf = kp
-        if kp_conf > confidence_threshold:
-            cv2.circle(frame, (int(kx), int(ky)), 6, (0,255,0), -1)
+#     for kp in shaped:
+#         ky, kx, kp_conf = kp
+#         if kp_conf > confidence_threshold:
+#             cv2.circle(frame, (int(kx), int(ky)), 6, (0,255,0), -1)
 
 
 
-# Function to loop through each person detected and render
-def loop_through_people(frame, keypoints_with_scores, edges, confidence_threshold):
-    for person in keypoints_with_scores:
-        draw_connections(frame, person, edges, confidence_threshold)
-        draw_keypoints(frame, person, confidence_threshold)
+# # Function to loop through each person detected and render
+# def loop_through_people(frame, keypoints_with_scores, edges, confidence_threshold):
+#     for person in keypoints_with_scores:
+#         draw_connections(frame, person, edges, confidence_threshold)
+#         draw_keypoints(frame, person, confidence_threshold)
 
 def radar_chart(row1, row2, row3):  
     df = pd.DataFrame(dict(
@@ -147,6 +147,7 @@ with st.sidebar.form("Post PE Class Analysis"):
     code = st.text_input('Class Code')
     name = st.text_input('Name')
     age = st.slider('Age', min_value = 12, max_value = 17, value = 15, step=1)
+    gender = st.radio('Gender;',('Male','Female'))
     level = st.selectbox('Select your level:',class_df['sec column'])
     stream = st.selectbox('Select your stream:', stream_df['str column'])
     class_no = st.selectbox('Select your class:',class_df['third column'])
