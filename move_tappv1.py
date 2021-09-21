@@ -1,8 +1,8 @@
 import streamlit as st #success this version does not support linear regression
 # To make things easier later, we're also importing numpy and pandas for
 # working with sample data. Need to upload this version to an ipad but we need to cut down on the face landmarks to save processing power
-import cv2
-import av
+#import cv2
+#import av
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import altair as alt
 import plotly.express as px
 import pandas as pd
-from gsheetsdb import connect
+#from gsheetsdb import connect
 # from streamlit_webrtc import (
 #     AudioProcessorBase,
 #     ClientSettings,
