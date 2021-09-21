@@ -1,8 +1,6 @@
 import streamlit as st #success this version does not support linear regression
 # To make things easier later, we're also importing numpy and pandas for
 # working with sample data. Need to upload this version to an ipad but we need to cut down on the face landmarks to save processing power
-import tensorflow as tf
-import tensorflow_hub as hub
 import cv2
 import av
 from matplotlib import pyplot as plt
