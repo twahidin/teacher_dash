@@ -16,9 +16,6 @@ backports.zoneinfo==0.2.1
 base58==2.1.0
 bleach==4.1.0
 blinker==1.4
-boto==2.49.0
-boto3==1.18.42
-botocore==1.21.42
 cachetools==4.2.2
 certifi==2021.5.30
 cffi==1.14.6
@@ -128,12 +125,6 @@ smmap==4.0.0
 streamlit==0.88.0
 streamlit-webrtc==0.28.0
 tenacity==8.0.1
-tensorboard==2.6.0
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.0
-tensorflow==2.4.1
-tensorflow-estimator==2.4.0
-tensorflow-hub==0.12.0
 termcolor==1.1.0
 terminado==0.11.1
 testpath==0.5.0
